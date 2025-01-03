@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My ToDo List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>My To$Do List</h1>
+    <input type="text" id="task-input" placeholder="Ajouter une tâche">
+    <button id="add-btn">Ajouter</button>
+    <ul id="task-list"></ul>
+    <button @click="supprimerElement(index)">Supprimer</button>
+
+    <script>
+        function supprimerElement() {
+            // Supprimer l'élément parent du bouton
+            var bouton = document.getElementById("supprimer");
+            bouton.parentElement.remove();
+        }
+        function supprimerElement(button) {
+            button.parentElement.remove();
+        }
+
+    </script>
+    
+                         <script src="scrip.js"></script>
+</body>
+</html>
