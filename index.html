@@ -5,26 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My ToDo List</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Ajouter les icônes FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <h1>My To$Do List</h1>
-    <input type="text" id="task-input" placeholder="Ajouter une tâche">
-    <button id="add-btn">Ajouter</button>
-    <ul id="task-list"></ul>
-    <button @click="supprimerElement(index)">Supprimer</button>
 
-    <script>
-        function supprimerElement() {
-            // Supprimer l'élément parent du bouton
-            var bouton = document.getElementById("supprimer");
-            bouton.parentElement.remove();
-        }
-        function supprimerElement(button) {
-            button.parentElement.remove();
-        }
+    <h1>My ToDo List</h1>
+      
 
-    </script>
-    
-                         <script src="scrip.js"></script>
+    <div class="todo-container">
+        <!-- Formulaire de saisie de tâche -->
+      <input type="text" id="task-input" placeholder="Ajouter une tâche">
+      <label for="dueDate">Date limite :</label>
+      <input type="date" id="dueDate" required><br><br>
+        <!-- Champs de recherche -->
+        <input type="text" id="search-input" placeholder="Rechercher par mot-clé..." oninput="filterTasks()">
+
+        <!-- Tri par priorité ou date -->
+        <select id="sort-select" onchange="sortTasks()">
+            <option value="date">Trier par date</option>
+            <option value="priority">Trier par priorité</option>
+        </select>
+
+        <!-- Filtres pour afficher les tâches complétées ou en cours -->
+        <button onclick="filterByStatus('completed')">Tâches Complétées</button>
+        <button onclick="filterByStatus('in-progress')">Tâches En Cours</button>
+        <button onclick="showAllTasks()">Toutes les tâches</button>
+        <button onclick="search('button')">Rechercher </button>
+
+        <ul id="task-list"></ul> 
+
+         
+        <label for="taskCategory">Catégorie :</label>
+        <select id="taskCategory">
+            <option value="Travail">Travail</option>
+            <option value="Personnel">Personnel</option>
+            <option value="Loisirs">Loisirs</option>
+            <option value="Autre">Autre</option>
+        </select>
+
+        <select id="taskpriorite">
+            <option value="Basse">Basse</option>
+            <option value="Moyenne">Moyenne</option>
+            <option value="Haute">Haute</option>
+        </select>
+
+        <button id="add-btn">Ajouter</button>
+        <button id="add-btn">Réinitialiser</button>
+    </div>
+
+    <script src="scrip.js"></script>
 </body>
 </html>

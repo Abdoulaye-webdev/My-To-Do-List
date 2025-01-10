@@ -8,6 +8,15 @@ body {
 h1 {
   color: #333;
 }
+.todo-container{
+  max-width: 500px;
+  margin: 300px;
+  background: #ccc;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(8, 207, 243, 0,1);
+  margin-top: 20px;
+}
 
 input, button {
   padding: 10px;
